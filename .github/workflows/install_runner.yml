@@ -5,10 +5,7 @@ jobs:
   install-runner:
     runs-on: ubuntu-20.04
     name: Install org runner
-    steps:
-      - name: Checkout action
-        uses: actions/checkout@v2
-      
+    steps:  
       - uses: redhat-actions/oc-login@v1.1
         with:
           openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
@@ -19,7 +16,7 @@ jobs:
       - name: Install self hosted runner into repository
         uses: redhat-actions/self-hosted-runner-installer@main
         with:
-          github_pat: ${{ secrets.GITHUB_TOKEN }}
+          github_pat: ${{ secrets.REPO_TOKEN }}
           runner_labels: repo-label, repo-label-2
   
   test-selfhosted:
