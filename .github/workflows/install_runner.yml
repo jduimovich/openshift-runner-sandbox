@@ -23,3 +23,9 @@ jobs:
           repository: jduimovich/openshiftrunner
           event-type: runner-ready
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}' 
+  test-selfhosted:
+    runs-on: [ self-hosted, openshift ]
+    needs: install-runner 
+    steps:
+      - name: Trigger other workflows
+      - run: "echo check other workflows have started"
