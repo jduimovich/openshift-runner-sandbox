@@ -17,10 +17,10 @@ jobs:
         with:
           github_pat: ${{ secrets.REPO_TOKEN }}
           runner_labels: openshift
-  
-  test-selfhosted:
-    runs-on: [ self-hosted, openshift ]
-    needs: install-runner
-
-    steps:
-      - run: "hostname"
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_TOKEN }}
+          repository: jduimovich/openshiftrunner
+          event-type: runner-ready
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}' 
