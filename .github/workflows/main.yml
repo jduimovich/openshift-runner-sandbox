@@ -9,7 +9,7 @@ on:
 jobs:
   test-shell:
     name: Run an ls to show files
-    runs-on: self-hosted 
+    runs-on: [ self-hosted, openshift ]
     steps:
     - uses: actions/checkout@v2   
     - name: Shell test 
