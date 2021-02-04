@@ -8,22 +8,20 @@ jobs:
     steps:
       - name: Checkout action
         uses: actions/checkout@v2
-
+      
       - uses: redhat-actions/oc-login@v1.1
         with:
           openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
           openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
+          namespace: jduimovich-code
           insecure_skip_tls_verify: true
 
-      - name: Install self hosted runner into org
-        uses: redhat-actions/self-hosted-runner-installer@main
+      - name: Install self hosted runner into repository
+        uses: ./
         with:
           github_pat: ${{ secrets.ORG_SECRET }}
-          runner_location: jduimovich
-          runner_labels: org-label, org-label-2
-          runner_replicas: 2
-          helm_extra_args: |
-            --set-string secretName=github-org-pat
+          runner_labels: repo-label, repo-label-2
+  
   test-selfhosted:
     runs-on: [ self-hosted, org-label, org-label-2 ]
     needs: install-runner
