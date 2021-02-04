@@ -19,7 +19,7 @@ jobs:
       - name: Install self hosted runner into repository
         uses: redhat-actions/self-hosted-runner-installer@main
         with:
-          github_pat: ${{ secrets.ORG_SECRET }}
+          github_pat: ${{ secrets.GITHUB_TOKEN }}
           runner_labels: repo-label, repo-label-2
   
   test-selfhosted:
