@@ -18,7 +18,7 @@ jobs:
       - name: Install self hosted runner into org
         uses: redhat-actions/self-hosted-runner-installer@main
         with:
-          github_pat: ${{ secrets.ORG_TOKEN }}
+          github_pat: ${{ secrets.ORG_SECRET }}
           runner_location: redhat-actions
           runner_labels: org-label, org-label-2
           runner_replicas: 2
