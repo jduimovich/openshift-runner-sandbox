@@ -1,4 +1,4 @@
-name: simple shell
+name: Simple Shell on openshift runner
 env:    
   DEPLOY: "Shell simple workflow"
 on:
@@ -12,8 +12,7 @@ jobs:
     - uses: actions/checkout@v2   
     - name: Shell test 
       run: |  
-        ls -al
-        du -a       
+        ls -al 
 
  
  

@@ -1,10 +1,9 @@
-name: Test self-hosted runner in org
-on: [ push, workflow_dispatch ]
-
+name: Install Runner and Dispatch Workflows
+on: [ push, workflow_dispatch ] 
 jobs:
   install-runner:
     runs-on: ubuntu-20.04
-    name: Install org runner
+    name: Ensure Runner Installed, then signal workflows
     steps:  
       - uses: redhat-actions/oc-login@v1.1
         with:
@@ -12,12 +11,12 @@ jobs:
           openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
           namespace: jduimovich-code
           insecure_skip_tls_verify: true 
-      - name: Install self hosted runner into repository
+      - name: Ensure self hosted runner is running 
         uses: redhat-actions/self-hosted-runner-installer@main
         with:
           github_pat: ${{ secrets.REPO_TOKEN }}
           runner_labels: openshift
-      - name: Repository Dispatch
+      - name: Signal dependent workflows waiting for runner-ready
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.REPO_TOKEN }}
