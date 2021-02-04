@@ -16,7 +16,7 @@ jobs:
           insecure_skip_tls_verify: true
 
       - name: Install self hosted runner into org
-        uses: redhat-actions/self-hosted-runner-installer
+        uses: redhat-actions/self-hosted-runner-installer@main
         with:
           github_pat: ${{ secrets.ORG_TOKEN }}
           runner_location: redhat-actions
