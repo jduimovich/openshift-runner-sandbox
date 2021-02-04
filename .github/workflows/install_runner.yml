@@ -26,6 +26,5 @@ jobs:
   test-selfhosted:
     runs-on: [ self-hosted, openshift ]
     needs: install-runner 
-    steps:
-      - name: Trigger other workflows
+    steps: 
       - run: "echo check other workflows have started"
