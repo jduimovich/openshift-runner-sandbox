@@ -11,8 +11,7 @@ jobs:
           openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
           openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
           namespace: jduimovich-code
-          insecure_skip_tls_verify: true
-
+          insecure_skip_tls_verify: true 
       - name: Install self hosted runner into repository
         uses: redhat-actions/self-hosted-runner-installer@main
         with:
