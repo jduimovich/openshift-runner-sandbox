@@ -1,0 +1,23 @@
+name: run-crc-self-hosted-actions
+env:    
+  DEPLOY: "Shell simple workflow"
+on:
+  # Learn more about events https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows
+  push:
+    # Edit to the branch(es) you want to build and deploy on each push.
+    branches: [ main ]
+jobs:
+  test-shell:
+    name: Use CRC and Sample App Testing
+    runs-on: self-hosted 
+    steps:
+    - uses: actions/checkout@v2   
+    - name: Shell test 
+      run: |  
+        ls -al
+        du -a       
+
+ 
+ 
+ 
+  
