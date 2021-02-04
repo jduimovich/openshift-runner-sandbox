@@ -1,4 +1,4 @@
-name: run-crc-self-hosted-actions
+name: simple shell
 env:    
   DEPLOY: "Shell simple workflow"
 on:
