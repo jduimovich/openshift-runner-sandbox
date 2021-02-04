@@ -27,4 +27,8 @@ jobs:
     runs-on: [ self-hosted, openshift ]
     needs: install-runner 
     steps: 
-      - run: "echo check other workflows have started"
+    - uses: actions/checkout@v2   
+    - name: Shell test 
+      run: |  
+        ls -al 
+        ls /home/runner/work/openshiftrunner/openshiftrunner/kubeconfig.yaml
