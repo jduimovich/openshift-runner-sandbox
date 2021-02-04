@@ -23,7 +23,7 @@ jobs:
           runner_labels: repo-label, repo-label-2
   
   test-selfhosted:
-    runs-on: [ self-hosted, org-label, org-label-2 ]
+    runs-on: [ self-hosted, repo-label, repo-label-2 ]
     needs: install-runner
 
     steps:
