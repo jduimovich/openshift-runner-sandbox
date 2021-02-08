@@ -25,7 +25,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.REPO_TOKEN }}
-          repository: jduimovich/openshiftrunner
+          repository: ${{ GITHUB_REPOSITORY }}  
           event-type: runner-ready
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}' 
       - name: complete tasks
