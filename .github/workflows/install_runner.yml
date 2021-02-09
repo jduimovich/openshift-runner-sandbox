@@ -24,7 +24,7 @@ jobs:
         uses: jduimovich/repository-dispatch@main
         id: dispatch
         with:
-          github-token: ${{ secrets.MY_TOKEN }}  
+          github-token: ${{ secrets.REPO_TOKEN }}  
           event-to-dispatch: runner-ready  
       - name: Result from the dispatch
         run: echo "Result ${{ steps.dispatch.outputs.result }}"
