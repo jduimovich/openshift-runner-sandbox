@@ -1,4 +1,4 @@
-# openshiftrunner
+# OpenShift Runner demo using Sandbox.
 
 This demo repo shows how to use our openshift runner installer to automate running workflows on OpenShift.
 
@@ -8,6 +8,8 @@ The first workflow will check if an openshift runner is installed into your clus
 After installation of a runner, and validation it's active, a repository_dispatch is used to signal other workflows
 
 ![Runner on Sandbox](runner.png)
+
+You will need to set two secrets OPENSHIFT_SERVER, OPENSHIFT_TOKEN which you can do via the gh cmd line (see the setsecret script for your platform) in this repo to do this automatically. You also need to modify the destination namespace or remove it to use the default for your login. 
 
 ```yaml
 name: Install Runner and Dispatch Workflows
