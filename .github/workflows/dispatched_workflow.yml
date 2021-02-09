@@ -1,0 +1,17 @@
+name: Workflow trigger via repository_dispatch
+on:
+  repository_dispatch:
+    types: [runner-ready]
+jobs:
+  shell:
+    name: Shell Commands
+    runs-on: [ self-hosted, openshift ]
+    steps: 
+    - name: Shell test 
+      run: |  
+        ls -al 
+
+ 
+ 
+ 
+  
