@@ -7,6 +7,9 @@ This repo containers two workflows.
 The first workflow will check if an openshift runner is installed into your cluster and if not install it. Repeated runs will validate it's still runnning and if not, restart it. 
 After installation of a runner, and validation it's active, a repository_dispatch is used to signal other workflows
 
+![Runner on Sandbox](runner.png)
+
+![Runner Logs ](runner-log.png)
 
 ```yaml
 name: Install Runner and Dispatch Workflows
