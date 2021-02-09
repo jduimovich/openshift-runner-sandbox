@@ -1,10 +1,10 @@
 # OpenShift Runner demo using Sandbox.
 
-This demo repo shows how to use our openshift runner installer to automate running workflows on OpenShift.
+This demo repo shows how to use our OpenShift runner installer to automate running workflows on OpenShift. You can try OpenShift yourself using the developer sandbox. https://developers.redhat.com/developer-sandbox 
 
 This repo contains two workflows.
 
-The first workflow will check if an openshift runner is installed into your cluster and if not install it. Repeated runs will validate it's still runnning and if not, restart it. 
+The first workflow will check if an OpenShift runner is installed into your cluster and if not install it. Repeated runs will validate it's still runnning and if not, restart it. 
 After installation of a runner, and validation it's active, a repository_dispatch is used to signal other workflows
 
 ![Runner on Sandbox](runner.png)
