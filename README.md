@@ -9,8 +9,6 @@ After installation of a runner, and validation it's active, a repository_dispatc
 
 ![Runner on Sandbox](runner.png)
 
-![Runner Logs ](runner-log.png)
-
 ```yaml
 name: Install Runner and Dispatch Workflows
 on: [ push, workflow_dispatch ] 
@@ -64,3 +62,7 @@ jobs:
       run: |  
         ls -al 
 ```
+
+Check the log and you should see results.
+
+![Runner Logs ](runner-log.png)
