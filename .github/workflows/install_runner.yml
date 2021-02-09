@@ -17,17 +17,14 @@ jobs:
           github_pat: ${{ secrets.REPO_TOKEN }}
           runner_labels: openshift
   run-post-runner-ready-workflows:
-    runs-on: [ self-hosted, openshift ]
+    runs-on: ubuntu-20.04
     needs: install-runner 
-    steps: 
-      - uses: actions/checkout@v2   
+    steps:  
       - name: Signal dependent workflows waiting for runner-ready
-        uses: peter-evans/repository-dispatch@v1
+        uses: jduimovich/repository-dispatch@main
+        id: dispatch
         with:
-          token: ${{ secrets.REPO_TOKEN }}
-          repository: ${{ GITHUB_REPOSITORY }}  
-          event-type: runner-ready
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}' 
-      - name: complete tasks
-        run: |  
-          echo running runner-ready workflows
+          github-token: ${{ secrets.MY_TOKEN }}  
+          event-to-dispatch: runner-ready  
+      - name: Result from the dispatch
+        run: echo "Result ${{ steps.dispatch.outputs.result }}"
