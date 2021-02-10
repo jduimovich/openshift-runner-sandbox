@@ -6,7 +6,8 @@ jobs:
   shell:
     name: Shell Commands
     runs-on: [ self-hosted, openshift ]
-    steps: 
+    steps:
+    - uses: actions/checkout@v2 
     - name: Shell test 
       run: |  
         ls -al 
