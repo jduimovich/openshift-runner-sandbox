@@ -1,0 +1,19 @@
+name: Workflow trigger via repository_dispatch
+on:
+  repository_dispatch:
+    types: [runner-ready]
+jobs:
+  shell:
+    name: Shell Commands
+    runs-on: [ self-hosted, crc ]
+    steps:
+    - uses: actions/checkout@v2 
+    - name: Shell test 
+      run: |  
+        ls -al
+        cat message
+
+ 
+ 
+ 
+  
