@@ -48,9 +48,7 @@ jobs:
 The dispatched workflows can be done as follows
 
 ```yaml
-name: Simple Shell on openshift runner
-env:    
-  DEPLOY: "Shell simple workflow"
+name: Simple Shell on openshift runner 
 on:
   repository_dispatch:
     types: [runner-ready]
