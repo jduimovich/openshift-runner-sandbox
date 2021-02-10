@@ -10,7 +10,8 @@ jobs:
     - uses: actions/checkout@v2 
     - name: Shell test 
       run: |  
-        ls -al 
+        ls -al
+        cat message
 
  
  
