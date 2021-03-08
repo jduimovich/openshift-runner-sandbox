@@ -3,7 +3,7 @@
 oc whoami --show-token >openshift.login.token
 set /P LOGINQ=< openshift.login.token
 del openshift.login.token
-Set LOGIN=%LOGINQ:"=%  
+Set LOGIN=%LOGINQ:"=%
 
 oc whoami --show-server >openshift.server
 set /P SERVERQ=< openshift.server
